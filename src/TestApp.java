@@ -6,14 +6,10 @@
 public class TestApp {
     public static void main(String[] args) {
         Dice rollerOne = new Dice();
-        Dice rollerTwo = new Dice();
+        MagicItem myItem = new MagicItem();
 
-        int rollOne = rollerOne.roll();
-        System.out.println(rollOne);
-        int rollTwo = rollerTwo.roll(4,12);
-        System.out.println(rollTwo);
-        int rollThree = rollerOne.roll(100);
-        System.out.println(rollThree);
-
+        int rollOne = rollerOne.roll(100);
+        myItem.determineType(rollOne);
+        System.out.println("My item type is: " + myItem.getItemType());
     }
 }
