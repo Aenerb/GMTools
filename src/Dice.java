@@ -1,7 +1,7 @@
 import java.util.Random;
 
 /**
- * Created by aenerb on 5/29/2015.
+ * Created by Elliot Brown on 5/29/2015.
  */
 public class Dice {
 
@@ -55,5 +55,25 @@ public class Dice {
         int roller = rollRand(6);
         System.out.println("Roll 1D6:" + roller);
         return roller;
+    }
+
+    /**
+     * Given a table with weights in it, roll and determine table selection.
+     * @param rollValue value returned by roll()
+     * @param weights int array containing weights
+     * @return value from 1 to weights.length
+     */
+    public static int weightedRoll(int rollValue, int[] weights) {
+        System.out.println("Roll result is: " + rollValue);
+        int range_min = 1;
+        int ndxMax = weights.length;
+        for(int ndx = 0; ndx < ndxMax; ++ndx) {
+            int range_max = range_min + weights[ndx];
+            if (rollValue < range_max) {
+                return(ndx + 1);
+            }
+            range_min = range_max;
+        }
+        return 0;
     }
 }
