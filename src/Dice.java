@@ -28,7 +28,7 @@ public class Dice {
     public static int roll(int quantity, int faces) {
         int rollResult=0;
         for (int roller = 0; roller < quantity; ++roller) {
-            Random rng = new Random();
+            //Random rng = new Random();
             int result = rollRand(faces);
             System.out.println("Roll xDy #" + (roller+1) + ":" + result);
             rollResult += result;
