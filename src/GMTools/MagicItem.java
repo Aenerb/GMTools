@@ -1,3 +1,5 @@
+package GMTools;
+
 /**
  * Created by Elliot Brown on 5/31/2015.
  */
@@ -10,7 +12,7 @@ public class MagicItem {
     private int basePrice;
 
     /**
-     * Constructor for MagicItem
+     * Constructor for GMTools.MagicItem
      * @param rarity determines if the item is a Minor, Medium, or Major magic item.
      */
     public MagicItem(int rarity) {

@@ -1,3 +1,5 @@
+package GMTools;
+
 import java.util.Random;
 
 /**
