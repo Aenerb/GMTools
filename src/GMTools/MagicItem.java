@@ -6,41 +6,59 @@ package GMTools;
 
 public class MagicItem {
 
+    /**
+     * Item Properties
+     */
     private int itemType;
+    private int itemRarity;
     private int specialProperty;
     private int totalBonus;
     private int basePrice;
+    private String itemName;
+
+    /** Default constructor.
+     *  Disabled to prevent creation of items without properties.
+     */
+    private MagicItem(){}
 
     /**
-     * Constructor for GMTools.MagicItem
-     * @param rarity determines if the item is a Minor, Medium, or Major magic item.
+     * Constructor for MagicItem
+     * @param theName Name of the item
+     * @param theItemType Type of the Item (weapon, sword, potion, etc.)
+     * @param theRarity How rare the item is
      */
-    public MagicItem(int rarity) {
-        switch (rarity) {
-            case 0:
-                itemType = generateMinorItem();
-                break;
-            case 1:
-                itemType = generateMediumItem();
-                break;
-            case 2:
-                itemType = generateMajorItem();
-        }
+    public MagicItem(String theName, int theRarity, int theItemType) {
+        itemName = theName;
+        itemRarity = theRarity;
+        itemType = theItemType;
     }
 
-    public int generateMinorItem() {
-        return Dice.weightedRoll(Dice.roll(100), ItemLookupTables.getWeightsMinor());
-    }
-
-    public int generateMediumItem() {
-        return Dice.weightedRoll(Dice.roll(100), ItemLookupTables.getWeightsMedium());
-    }
-
-    public int generateMajorItem() {
-        return Dice.weightedRoll(Dice.roll(100), ItemLookupTables.getWeightsMajor());
-    }
-
+    /**
+     * Implementing Getters
+     */
     public int getItemType() {
         return itemType;
     }
+
+    public int getItemRarity() {
+        return itemRarity;
+    }
+
+    public int getSpecialProperty() {
+        return specialProperty;
+    }
+
+    public int getTotalBonus() {
+        return totalBonus;
+    }
+
+    public int getBasePrice() {
+        return basePrice;
+    }
+
+    public String getItemName() {
+        return itemName;
+    }
+
+
 }
