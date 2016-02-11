@@ -14,12 +14,13 @@ public class ItemLookupTables {
     private static int[] armorMajor = new int[]{8,8,11,11,11,8,3,3,37};
     private static int[] weaponMinor = new int[]{};
 
-
-
     public static int[] getWeightsMinor() {
         return weightsMinor;
     }
-    public static int[] getWeightsMedium() {return weightsMedium; }
-    public static int[] getWeightsMajor() {return weightsMajor;}
-
+    public static int[] getWeightsMedium() {
+        return weightsMedium;
+    }
+    public static int[] getWeightsMajor() {
+        return weightsMajor;
+    }
 }

@@ -3,20 +3,18 @@
  */
 
 public class TestApp {
-    public static void main(String[] args) {
-        int minMedMaj = 1;
 
-        System.out.println("My item type is: " + Dice.weightedRoll(Dice.roll(100), ItemLookupTables.getWeightsMinor()));
-        switch(minMedMaj) {
-            case 1:
-                Dice.weightedRoll(Dice.roll(100), ItemLookupTables.getWeightsMinor());
-                break;
-        }
-        /*switch(myItem.determineValue(rollerOne.roll(100))) {
-            case 1:
-                break;
-            default:
-                break;
-        }*/
+    private static final int minorItem = 0;
+    private static final int mediumItem = 1;
+    private static final int majorItem = 2;
+
+    public static void main(String[] args) {
+        MagicItem itemOne = new MagicItem(minorItem);
+        MagicItem itemTwo = new MagicItem(mediumItem);
+        MagicItem itemThree = new MagicItem(majorItem);
+
+        System.out.println(itemOne.getItemType());
+        System.out.println(itemTwo.getItemType());
+        System.out.println(itemThree.getItemType());
     }
 }

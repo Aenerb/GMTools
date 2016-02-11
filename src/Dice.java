@@ -69,9 +69,11 @@ public class Dice {
         int ndxMax = weights.length;
         for(int ndx = 0; ndx < ndxMax; ++ndx) {
             int range_max = range_min + weights[ndx];
+
             if (rollValue < range_max) {
                 return(ndx + 1);
             }
+
             range_min = range_max;
         }
         return 0;

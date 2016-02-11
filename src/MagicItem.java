@@ -3,27 +3,40 @@
  */
 
 public class MagicItem {
+
     private int itemType;
+    private int specialProperty;
+    private int totalBonus;
+    private int basePrice;
 
-    public int generateMinorItem {
+    /**
+     * Constructor for MagicItem
+     * @param rarity determines if the item is a Minor, Medium, or Major magic item.
+     */
+    public MagicItem(int rarity) {
+        switch (rarity) {
+            case 0:
+                itemType = generateMinorItem();
+                break;
+            case 1:
+                itemType = generateMediumItem();
+                break;
+            case 2:
+                itemType = generateMajorItem();
+        }
+    }
+
+    public int generateMinorItem() {
         return Dice.weightedRoll(Dice.roll(100), ItemLookupTables.getWeightsMinor());
-    };
-
-    // private int itemID;
-    // private int properties;
-    // private int totalBonus;
-    // private int basePrice;
-
-
-    /*
-    public int getItemID() {
-        return itemID;
     }
 
-    public void setItemID(int itemID) {
-        this.itemID = itemID;
+    public int generateMediumItem() {
+        return Dice.weightedRoll(Dice.roll(100), ItemLookupTables.getWeightsMedium());
     }
-    */
+
+    public int generateMajorItem() {
+        return Dice.weightedRoll(Dice.roll(100), ItemLookupTables.getWeightsMajor());
+    }
 
     public int getItemType() {
         return itemType;
